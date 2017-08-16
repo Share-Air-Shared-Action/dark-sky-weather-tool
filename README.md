@@ -8,3 +8,6 @@ This weather tool will use python to download hourly forecasts and upload it to 
 6)      Water vapor pressure
 7)      Precipitation
 8)      Solar Radiation.
+
+41.786,-87.752
+  https://api.darksky.net/forecast/3d5abd0dd03dc038cc654a14255173cb/41.786,-087.752,1500240486
