@@ -16,7 +16,8 @@ yesterday = (datetime.now() - timedelta(days=1)).isoformat()
 print(data.json())
 #First time usage only
 date = FIRST_DATE
-while(date <=yesterday):
+query = QUERY
+while(date =< yesterday)):
     #renew API Link to ask for information
     api_link = "{0},{1}".format(API_LINK,date)
 
@@ -31,8 +32,15 @@ while(date <=yesterday):
         val.extend([hourly[WIND_SPEED], hourly[WIND_DIRECTION], hourly[HUMIDITY]])
         val.extend([hourly[PRECIPITATION], hourly[UV_INDEX]])
 
-        cur.execute()
+        if date >= LAST_DATE:
+            query += "(val[:]);"
+        else:
+            query+="(val[:]), "
+    
     date += DAY
+
+cur.execute(query)
+#Loop to create string
 #print(weather) 
 #def first_time():
 ##
