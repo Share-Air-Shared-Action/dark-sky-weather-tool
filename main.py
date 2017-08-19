@@ -5,19 +5,17 @@ import psycopg2
 from json import dump
 
 # Connect to database
-try: 
-    conn = psycopg2.connect("dbname='sasa-airquality' user='postgres'")
-except:
-    print("Unable to conenct to the database")
+conn = psycopg2.connect("dbname='sasa-airquality' user='postgres'")
 
 cur = conn.cursor()
 
 yesterday = (datetime.now() - timedelta(days=1)).isoformat()
-print(data.json())
+# print(data.json())
+
 #First time usage only
 date = FIRST_DATE
 query = QUERY
-while(date =< yesterday)):
+while(date <= yesterday):
     #renew API Link to ask for information
     api_link = "{0},{1}".format(API_LINK,date)
 
