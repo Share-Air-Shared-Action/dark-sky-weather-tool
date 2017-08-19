@@ -11,11 +11,12 @@ cur = conn.cursor()
 
 yesterday = int((datetime.now() - timedelta(days=1)).strftime('%s'))
 # print(data.json())
-
+i = 0
 #First time usage only
 date = FIRST_DATE
-query = QUERY
+pre_query = QUERY
 while(date <= LAST_DATE):
+    if i == 2: break
     #renew API Link to ask for information
     api_link = "{0},{1}".format(API_LINK,date) 
     #HTTP GET Request that returns a json dict
@@ -36,15 +37,11 @@ while(date <= LAST_DATE):
             else:
                 val.extend([-1])
 
-  #       print(val, len(val)) 
-
-        if date >= LAST_DATE:
-            query += "({0});".format(val[:])
-        else:
-            query+="({0}), ".format(val[:])
+    pre_query+="({0}), ".format(val[:])
     
     date += DAY
-    
+    i+=1
+query = "{0};".format(pre_query[:-1])
 print(query)
 #cur.execute(query)
 
