@@ -6,11 +6,11 @@ LONGITUDE = "-87.752"
 FIRST_DATE = 1492475200
 
 # Aug 17 11pm
-LAST_DATE = 1503115200
+LAST_DATE = 1503374400
 DAY = 86400
 
 
-API_LINK = "https://api.darksky.net/forecast/{0}/{1},{2}".format(API_KEY,LATITUDE,LONGITUDE)
+API_LINK = "https://api.darksky.net/forecast/{0}/{1},{2}".format(API_KEY, LATITUDE, LONGITUDE)
 
 HOURLY = "hourly"
 DATA = "data"

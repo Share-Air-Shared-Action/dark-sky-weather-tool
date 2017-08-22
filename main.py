@@ -2,7 +2,6 @@ from requests import get
 from constants import *
 from datetime import datetime, timedelta
 import psycopg2
-from json import dump
 
 # Connect to database
 conn = psycopg2.connect("dbname='sasa_airquality' user='postgres'")
@@ -12,7 +11,7 @@ cur = conn.cursor()
 yesterday = int((datetime.now() - timedelta(days=1)).strftime('%s'))
 # print(data.json())
 i = 0
-#First time usage only
+# First time usage only
 date = FIRST_DATE
 pre_query = QUERY
 while(date <= LAST_DATE):
