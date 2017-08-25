@@ -6,7 +6,7 @@ LONGITUDE = "-87.752"
 FIRST_DATE = 1492475200
 
 # Aug 17 11pm
-LAST_DATE = 1503374400
+LAST_DATE = 1503702000
 DAY = 86400
 
 
@@ -25,4 +25,4 @@ PRECIPITATION = "precipIntensity"
 UV_INDEX = "uvIndex"
 COLUMNS = [TEMP, PRESSURE, WIND_SPEED, WIND_DIRECTION, HUMIDITY, PRECIPITATION, UV_INDEX]
 
-QUERY = "INSERT INTO  darksky-weather VALUES "
+QUERY = "INSERT INTO  darksky_weather (timestamp, temperature, pressure, wind_speed, wind_direction, humidity, precipitation, uv_index) VALUES "
